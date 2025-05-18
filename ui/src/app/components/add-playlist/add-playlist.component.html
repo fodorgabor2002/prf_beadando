@@ -1,0 +1,19 @@
+<form *ngIf="form" [formGroup]="form">
+    <h3>Adding new Playlist</h3>
+    <mat-label>Name</mat-label>
+    <mat-form-field class="max-width">
+        <input matInput formControlName="name" required>
+    </mat-form-field>
+    <mat-label>Description</mat-label>
+    <mat-form-field class="max-width">
+        <input matInput formControlName="description">
+    </mat-form-field>
+    <mat-label>Image URL</mat-label>
+    <mat-form-field class="max-width">
+        <input matInput formControlName="image_url">
+    </mat-form-field>
+    <div style="display: flex; justify-content: flex-end;">
+        <button mat-button (click)="dialogRef.close()" class="margin-right">CANCEL</button>
+        <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">ADD</button>
+    </div>
+</form>

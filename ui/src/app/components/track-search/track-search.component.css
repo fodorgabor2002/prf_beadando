@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 16px;
+
+}
+
+app-track{
+  min-width: 300px;
+  max-width:300px;
+  flex: 1 1;
+  margin: 4px;
+  cursor: pointer;
+}

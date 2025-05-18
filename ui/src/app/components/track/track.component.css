@@ -1,0 +1,83 @@
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  overflow: hidden;
+  background-color: #e3feff;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: #757575;
+}
+
+mat-card-content img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+mat-card-content img:hover {
+  transform: scale(1.03);
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+}
+
+button[mat-button] {
+  color: #e91e63;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+button[mat-button]:hover {
+  background-color: rgba(233, 30, 99, 0.1);
+  border-radius: 4px;
+}
+
+mat-card-actions button[mat-button] {
+  color: #e91e63;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: none;
+  background-color: transparent;
+}
+
+mat-card-actions button[mat-button]:hover {
+  background-color: rgba(233, 30, 99, 0.1);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+mat-card-actions mat-icon {
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+mat-card-actions button[mat-button]:hover mat-icon {
+  color: #c2185b;
+}

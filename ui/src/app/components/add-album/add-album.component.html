@@ -1,0 +1,48 @@
+<form *ngIf="form" [formGroup]="form">
+  <h3>Új Album hozzáadása</h3>
+
+  <mat-form-field class="max-width">
+    <mat-label>Album neve</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Megjelenés dátuma</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="releaseDate" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Előadó neve</mat-label>
+    <input matInput formControlName="artistName" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Hossz (percben)</mat-label>
+    <input matInput type="number" formControlName="length" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Műfaj</mat-label>
+    <input matInput formControlName="genre" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <mat-label>Borítókép URL</mat-label>
+    <input matInput formControlName="imageUrl" required>
+  </mat-form-field>
+
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">MÉGSE</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">
+      <div *ngIf="data != undefined">
+        <span>Album módosítása</span>
+      </div>
+
+      <div *ngIf="data == undefined">
+        <span>Új album hozzáadása</span>
+      </div>
+    </button>
+  </div>
+</form>

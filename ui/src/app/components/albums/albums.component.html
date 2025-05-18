@@ -1,0 +1,22 @@
+<app-home></app-home>
+
+<button mat-raised-button color="primary" (click)="openAddAlbumDialog()">Add Album</button>
+
+<div class="album-list">
+  <div *ngFor="let album of albums" class="album-card">
+    <h3>{{ album.name }}</h3>
+    <p>Artist: {{ album.artistName }}</p>
+    <p>Release Date: {{ album.releaseDate | date }}</p>
+    <p>Genre: {{ album.genre }}</p>
+    <img [src]="album.imageUrl" alt="{{ album.name }}" class="album-cover" />
+
+    <div class="card-actions">
+      <button mat-icon-button color="primary" (click)="openEditAlbumDialog(album)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteAlbum(album._id!)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$candy-app-primary: mat.define-palette(mat.$blue-palette, 500, 100, 400);
+$candy-app-accent: mat.define-palette(mat.$light-blue-palette, 500, 100, 400);
+
+$candy-app-theme: mat.define-light-theme((color: (primary: $candy-app-primary,
+        accent: $candy-app-accent,
+      )));
+
+@include mat.all-component-themes($candy-app-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.margin-right {
+  margin-right: 16px !important;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.no-box {
+  box-shadow: 0;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: stretch;
+}
+
+.reg-card,
+.log-card {
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+
+  .reg-card,
+  .log-card {
+    max-width: 33em;
+    min-height: 40em;
+    height: auto;
+  }
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+
+.mat-mdc-dialog-container {
+  overflow: auto;
+  height: auto !important;
+}
+
+.mat-mdc-input-element {
+  border: none !important;
+}

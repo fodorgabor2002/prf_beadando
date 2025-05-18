@@ -1,0 +1,20 @@
+<app-home></app-home>
+
+<button (click)="openModal()">Add Playlist</button>
+
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <app-add-playlist></app-add-playlist>
+  </div>
+</div>
+
+<div class="playlists-container">
+    <div *ngFor="let playlist of playlists" class="playlist-card">
+    <h3>{{ playlist.name }}</h3>
+    <p *ngIf="playlist.description">{{ playlist.description }}</p>
+    <p><strong>Created By:</strong> {{ playlist.createdBy }}</p>
+    <p><strong>Public:</strong> {{ playlist.isPublic ? 'Yes' : 'No' }}</p>
+    <p><strong>Tracks:</strong> {{ playlist.trackIds.length }}</p>
+    </div>
+</div>

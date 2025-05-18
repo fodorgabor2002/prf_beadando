@@ -1,0 +1,29 @@
+  button {
+    background-color: #358eb4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 45%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 16px;
+    margin: 20px;
+
+  }
+
+  app-track {
+    min-width: 300px;
+    max-width: 300px;
+    flex: 1 1;
+    margin: 4px;
+    cursor: pointer;
+  }

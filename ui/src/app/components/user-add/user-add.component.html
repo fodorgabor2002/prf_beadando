@@ -1,0 +1,23 @@
+<form *ngIf="form" [formGroup]="form">
+  <h3>Adding user</h3>
+  <mat-label>Username</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="username" required>
+  </mat-form-field>
+      <mat-label>Password</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="password" required>
+  </mat-form-field>
+  <mat-form-field class="max-width">
+    <select matNativeControl required formControlName="isAdmin">
+      <option value="true">Admin</option>
+      <option value="false">Not Admin</option>
+    </select>
+  
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">CANCEL</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">ADD</button>
+  </div>
+</form>
+

@@ -1,0 +1,24 @@
+<app-home></app-home>
+<button mat-button (click)="openDialog()">Add new user </button>
+<div class="container">
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username</th>
+      <td mat-cell *matCellDef="let user">{{user.username}} </td>
+    </ng-container>
+    <ng-container matColumnDef="isAdmin">
+      <th mat-header-cell *matHeaderCellDef> Admin</th>
+      <td mat-cell *matCellDef="let user">{{user.isAdminAcces}} </td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit</th>
+      <td mat-cell *matCellDef="let user"><mat-icon (click)="updateUser(user)">edit</mat-icon></td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete</th>
+      <td mat-cell *matCellDef="let user"><mat-icon (click)="deleteUser(user._id)">delete</mat-icon></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+    <tr mat-row *matRowDef="let row; columns: columndefs"></tr>
+  </table>
+</div>

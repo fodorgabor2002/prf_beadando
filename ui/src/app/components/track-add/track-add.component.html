@@ -1,0 +1,23 @@
+<form *ngIf="form" [formGroup]="form">
+  <h3>Adding new Track</h3>
+  <mat-label>Title</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="title" required>
+  </mat-form-field>
+  <mat-label>Artist</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="artist" required>
+  </mat-form-field>
+  <mat-label>Image URL</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="image_url" required>
+  </mat-form-field>
+  <mat-label>Video URL</mat-label>
+  <mat-form-field class="max-width">
+    <input matInput focus formControlName="video_url" required>
+  </mat-form-field>
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">CANCEL</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">ADD</button>
+  </div>
+</form>

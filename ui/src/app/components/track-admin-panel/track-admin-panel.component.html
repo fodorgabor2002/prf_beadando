@@ -1,0 +1,5 @@
+<app-home></app-home>
+<button mat-button (click)="openDialog()">Add new track </button>
+<div class="container">
+  <app-track *ngFor="let track of tracks" [track]="track" [adminMode]=true></app-track>
+</div>

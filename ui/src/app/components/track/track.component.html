@@ -1,0 +1,19 @@
+<mat-card >
+  <mat-card-header>
+    <mat-card-title>{{track.title}}</mat-card-title>
+    <mat-card-subtitle>
+      {{track.artist}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img *ngIf="track.image_url" [src]="track.image_url" alt="borito" webOnHover (click)="openVideo()">
+  </mat-card-content>
+  <mat-card-actions *ngIf="hasAction">
+    <button *ngIf="adminMode" mat-button (click)="deleteTrack(track._id)">
+      <mat-icon *ngIf="adminMode" style="color: #e91e63;">delete</mat-icon>
+      <ng-template #star>
+        <mat-icon>star_outline</mat-icon>
+      </ng-template>
+    </button>
+  </mat-card-actions>
+</mat-card>

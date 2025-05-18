@@ -1,0 +1,22 @@
+.splash-title, [mat-button] {
+  text-transform: capitalize;
+}
+
+[mat-button] {
+  margin-right: 16px;
+  float: right;
+}
+
+a[mat-button] {
+  font-size: xx-large;
+}
+
+.navbar{
+  background-color: #358eb4;
+  color: white;
+  padding: 10px;
+}
+
+.title{
+  margin-right: 10px
+}
