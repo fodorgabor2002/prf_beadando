@@ -1,10 +1,7 @@
 {
     "/api": {
-        "target": "http://mean-api:3080",
-        "secure": true,
-        "changeOrigin":true,
-        "pathRewrite":{
-            "^/server":""
-        }
+        "target": "http://musify-api.localhost",
+        "secure": false,
+        "changeOrigin": true
     }
 }

@@ -43,7 +43,7 @@ app.use(passport.session());
 
 // CORS beállítás
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: '*',
   credentials: true, 
 }));
 
@@ -61,4 +61,3 @@ app.listen(port, () => {
 });
 
 console.log('After server is ready.');
-
